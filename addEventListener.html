@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>蝴蝶效应</button> -->
+  <div id="butterfly">山</div>
+  <div id="test">
+    <p>我就是那个元素</p>
+  </div>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <script>
+   let x=document.getElementById('butterfly');
+   x.addEventListener('click',function(){
+    //  alert('成功了吗');
+    // prompt("请输入您的名字");
+    confirm("蝴蝶效应模式");
+   });
+   let node =document.createElement('div');
+   let text=document.createTextNode('我的');
+   node.appendChild(text);
+  //  须得挂载到已经存在的元素中
+   let element=document.getElementById("test");
+   let child=document.getElementsByTagName('p');
+   element.appendChild(node,child);
+ 
+   let collection=document.getElementsByTagName("p");
+   console.log(collection);
+   let nodeList=document.querySelectorAll('p');
+   console.log(nodeList);
+   </script>
+   <style>
+     div{
+       width: 100px;
+       height: 100px;
+       background-color: skyblue;
+       text-align: center;
+     }
+   </style>
+</body>
+</html>
